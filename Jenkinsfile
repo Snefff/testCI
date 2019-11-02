@@ -4,7 +4,7 @@ pipeline {
     stages {
 		stage('Checkout external proj') {
 			steps {
-				"checking out scm"
+				echo "Checking out scm..."
 				checkout scm
 			}
 		}
