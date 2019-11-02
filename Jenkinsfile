@@ -5,13 +5,13 @@ pipeline {
 		stage('Checkout external proj') {
 			steps {
 				echo "Checking out scm..."
-				checkout scm
+				git 'https://github.com/Snefff/testCI.git'
 			}
 		}
         stage('Build') {
             steps {
                 echo 'Building..'
-				mvn install
+				bat label: '', script: 'mvn install'
             }
         }
         stage('Test') {
