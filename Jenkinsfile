@@ -11,7 +11,9 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
-				bat label: '', script: 'cd maven-demo-1'
+				dir('/maven-demo-1') {
+					bat label: '', script: 'mvn install'
+				}
 				bat label: '', script: 'mvn install'
             }
         }
