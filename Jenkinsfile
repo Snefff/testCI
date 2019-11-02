@@ -2,6 +2,12 @@ pipeline {
     agent any
 
     stages {
+		stage('Checkout external proj') {
+			steps {
+				"checking out scm"
+				checkout scm
+			}
+		}
         stage('Build') {
             steps {
                 echo 'Building..'
