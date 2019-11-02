@@ -11,10 +11,10 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
-				dir('/maven-demo-1') {
+				dir('${env.WORKSPACE}/maven-demo-1') {
 					bat label: '', script: 'mvn install'
 				}
-				bat label: '', script: 'mvn install'
+				
             }
         }
         stage('Test') {
